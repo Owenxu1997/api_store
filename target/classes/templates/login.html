@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>API管理系统登陆</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+    </head>
+    <body>
+    
+        <div id ="login_container" class="box">
+            <h2>API管理系统登陆</h2>
+            <form action="/user/loginUser" method="post">
+                <div class="inputBox">
+                    <input id="userName" type="text" name="userName">
+                    <label>Username</label>
+                </div>
+                <div class="inputBox">
+                    <input id="userPassword" type="password" name="userPassword">
+                    <label>Password</label>
+                </div>
+                <div>
+                    <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+                </div>
+                <input type="submit" value="Login" >
+<!--                <input type="submit" value="Register" >-->
+                <a href="/user/toRegister">register</a>
+                
+            </form>
+        </div>
+    </body>
+</html>
